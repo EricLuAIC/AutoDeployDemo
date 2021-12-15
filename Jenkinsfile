@@ -1,4 +1,11 @@
 node {
+
+    def gradleHome = tool name: 'gradle6.7.1', type: 'gradle'
+    def gradle = "${gradleHome}/bin/gradle"
+    def nodeHome = tool name: 'nodeJs13', type: 'nodejs'
+    def node = "${nodeHome}/bin/node"
+    def npm = "${nodeHome}/bin/npm"
+
     stage('Init ENV') {
         env.JAVA_HOME = "${java_home}"
         sh "echo \$JAVA_HOME"
