@@ -27,7 +27,19 @@ node {
         echo "JOB_URL: ${env.JOB_URL}"
     }
     stage('Checkout Git Source') {
+        // git設定
+        def gitBranch = 'dev'
+        def gitCredentialsId = 'github'
+        def gitUrl = 'https://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@github.com/EricLuAIC/AutoDeployDemo.git'
         echo 'checkout from github'
+        checkout([
+                $class: 'GitSCM',
+                branches: [[name: "*/${gitBranch}"]],
+                doGenerateSubmoduleConfigurations: false,
+                extensions: [],
+                submoduleCfg: [],
+                userRemoteConfigs: [[credentialsId: "${gitCredentialsId}", url: "${gitUrl}"]]
+        ])
     }
     stage('Build') {
         echo 'Build Source'
