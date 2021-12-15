@@ -28,7 +28,7 @@ node {
     }
     stage('Checkout Git Source') {
         // git設定
-        def gitBranch = 'dev'
+        def gitBranch = 'master'
         def gitCredentialsId = 'github'
         def gitUrl = 'https://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@github.com/EricLuAIC/AutoDeployDemo.git'
         echo 'checkout from github'
