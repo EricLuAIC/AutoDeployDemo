@@ -30,7 +30,7 @@ node {
         // git設定
         def gitBranch = 'master'
         def gitCredentialsId = 'github'
-        def gitUrl = 'https://github.com/EricLuAIC/AutoDeployDemo.git'
+        def gitUrl = 'https://github.com/ykkap-taiwan/ykkap-pro.git'
         echo 'checkout from github'
         checkout([
                 $class: 'GitSCM',
