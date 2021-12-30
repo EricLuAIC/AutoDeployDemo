@@ -1,3 +1,10 @@
 group 'com.sample.AutoDeployDemo'
 version '1.0-SNAPSHOT'
 
+task backCopy2(type:Exec) {
+    println 'backend copy Vue.js frontend content'
+    //commandLine 'del','.\\src\\main\\resources\\templates\\jirafrontend','*.*','/Q','/F','/S'
+    commandLine 'rm','-rf','./server/src/main/resources/public/*'
+    commandLine 'cp','-r','./client/dist/','./server/src/main/resources/static'
+    //static public
+}
